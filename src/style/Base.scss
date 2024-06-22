@@ -1,0 +1,59 @@
+/* =====================
+        Colors
+=======================*/
+$dark: #010101;
+$orange: #F14D10;
+$gray: #E3D0D0;
+
+/* =====================
+        Fonts
+=======================*/
+$fontOne: 'Fondamento',
+cursive;
+$fontTwo: 'Oswald',
+sans-serif;
+$fontThree: 'Nunito',
+sans-serif;
+$fontFour: 'Josefin Sans',
+sans-serif;
+
+/* ==================
+    Break Points 
+====================*/
+$bp-medium: 48em; //768px
+$bp-large: 74.93em; // 1199px
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //10px/16px = 62.5%, 1rem = 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $dark;
+    color: #fff;
+}
+
+//for mobile to take 100% height
+html,
+body {
+    height: 100%;
+}
+
+div#root {
+    height: 100%;
+}

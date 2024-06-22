@@ -1,0 +1,274 @@
+@import '../Base.scss';
+@import '../Mixins.scss';
+
+
+.heroMobile-container {
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.components-slider {
+    height: 95%;
+}
+
+.mainSite-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95% !important; //.swiper-slide nadpisuje, dlatego important
+
+
+    &__hero-info {
+        margin: 0 auto;
+    }
+
+    &__primary-title {
+        line-height: 2;
+        text-align: center;
+        font-size: calc(18px + (56 - 18) * ((100vw - 320px) / (1199 - 320)));
+        font-family: $fontOne;
+
+        @media (orientation: landscape) {
+            max-width: 70rem;
+            font-size: calc(10px + (40 - 10) * ((100vw - 320px) / (1199 - 320)));
+
+            @media screen and (min-width: 640px) and (max-width: 823px),
+            screen and (min-height: 280px) and (max-height: 414px) {
+                font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (823 - 320)));
+            }
+        }
+    }
+
+    &__hero-buttons {
+        display: flex;
+        width: 100%;
+    }
+
+    &__button {
+        //Wyrównanie napisów w kole
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        width: 20vw;
+        height: 20vw;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        font-size: calc(12px + (30 - 12) * ((100vw - 320px) / (768 - 320)));
+        padding: calc(5px + (26 - 5) * ((100vw - 320px) / (768 - 320)));
+
+        //Wyrównanie przycisków w kontenerze
+        margin: 0 auto;
+
+        @media (orientation: landscape) {
+            font-size: calc(8px + (30 - 8) * ((100vw - 320px) / (1199 - 320)));
+            width: calc(18px + (40 - 18) * ((100vw - 320px) / (768 - 320)));
+            height: calc(18px + (40 - 18) * ((100vw - 320px) / (768 - 320)));
+
+            @media screen and (min-width: 640px) and (max-width: 823px),
+            screen and (min-height: 280px) and (max-height: 414px) {
+                font-size: calc(10px + (15 - 10) * ((100vw - 320px) / (823 - 320)));
+
+                width: calc(18px + (30 - 18) * ((100vw - 320px) / (823 - 320)));
+                height: calc(18px + (30 - 18) * ((100vw - 320px) / (823 - 320)));
+            }
+        }
+    }
+}
+
+
+.swiper-pagination-bullet {
+    width: 2rem !important;
+    height: 2rem !important;
+    opacity: 1 !important;
+    border: white solid 1px !important;
+    background-color: transparent !important;
+
+    @media screen and (min-width : $bp-medium) and (max-width : $bp-large) {
+        width: calc(50px + (60 - 50) * ((100vw - 768px) / (1199 - 768))) !important;
+        height: calc(50px + (60 - 50) * ((100vw - 768px) / (1199 - 768))) !important;
+
+        @media (orientation: landscape) {
+            margin-bottom: 1rem !important;
+            width: 3.5rem !important;
+            height: 3.5rem !important;
+        }
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $orange !important;
+}
+
+
+
+
+
+.navigationMobile {
+    height: calc(30px + (70 - 30) * ((100vw - 320px) / (1199 - 320)));
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: $dark;
+        @include navigationSize();
+        position: absolute;
+        right: calc(0% + 2rem); //wartość paddingu z hero containera
+        border-radius: 50%;
+        z-index: 2000;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &__background {
+        @include navigationSize();
+        border-radius: 50%;
+        position: absolute;
+        right: calc(0% + 2rem); //wartość paddingu z hero containera
+        background-image: radial-gradient(orange, orangered);
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    &__nav {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -30%;
+        z-index: 1500;
+        opacity: 0;
+        width: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__item {
+        margin: 1rem;
+    }
+
+    &__link {
+
+        border: 0;
+        background-color: transparent;
+        color: white;
+        font-size: calc(25px + (70 - 25) * ((100vw - 320px) / (1199 - 320)));
+        font-family: $fontOne;
+
+        @media (orientation: landscape) {
+            font-size: calc(18px + (50 - 18) * ((100vw - 320px) / (1199 - 320)));
+        }
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: yellow;
+            transform: translateX(1rem);
+            cursor: pointer;
+        }
+    }
+
+
+    //FUNCTIONALITY
+    &__checkbox:checked~&__background {
+        transform: scale(100);
+        /* Zablokowanie przesuwania */
+        overflow-x: hidden;
+        position: fixed;
+    }
+
+    &__checkbox:checked~&__nav {
+        opacity: 1;
+        width: 100%;
+        left: 0;
+    }
+
+
+    //ICON
+    &__icon {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &,
+        &::before,
+        &::after {
+            width: 2rem;
+            height: 3px;
+            background-color: $orange;
+            display: inline-block;
+
+            @media screen and (min-width : $bp-medium) and (max-width : $bp-large) {
+                width: 3rem;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+            width: 1.5rem;
+
+            @media screen and (min-width : $bp-medium) and (max-width : $bp-large) {
+                width: 2.5rem;
+            }
+        }
+
+
+        &::before {
+            left: .4rem;
+            top: -.8rem;
+        }
+
+        &::after {
+            left: .4rem;
+            top: .8rem;
+        }
+    }
+
+    &__checkbox:checked+&__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked+&__button &__icon::before {
+        top: 0;
+        left: 0;
+        width: 2rem;
+        transform: rotate(135deg);
+
+        @media screen and (min-width : $bp-medium) and (max-width : $bp-large) {
+            left: .25rem;
+            width: 2.5rem;
+        }
+    }
+
+    &__checkbox:checked+&__button &__icon::after {
+        top: 0;
+        left: 0;
+        width: 2rem;
+        transform: rotate(-135deg);
+
+        @media screen and (min-width : $bp-medium) and (max-width : $bp-large) {
+            left: .25rem;
+            width: 2.5rem;
+        }
+    }
+}
