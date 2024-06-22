@@ -1,17 +1,67 @@
-Strona na zaliczenie przedmiotu Popularne frameworki JavaScript
+*Strona na zaliczenie przedmiotu Popularne frameworki JavaScript Kacper Łukaszewski Nr albumu: 154948*
 
-Strona została stworzona przy użyciu:
--React
--Hooks
--HTML
--CSS
--SASS
-W projekcie zastosowano również następujące biblioteki:
 
-aos: Wspomaga animacje, takie jak fade-in.
-scrollspy: Śledzi, w którym miejscu strony znajduje się użytkownik, aby dynamicznie zmieniać wygląd elementów.
-react-transition-group: Umożliwia płynne przejścia między elementami tablicy zdjęć w karuzeli.
-emailjs: Wspomaga wysyłanie wiadomości e-mail.
+Projekt Aplikacji: Strona Portfolio
+Wykorzystane Frameworki JavaScript oraz Ich Architektura
+W projekcie Strona Portfolio wykorzystano następujące frameworki i narzędzia JavaScript:
+
+React: Główny framework do budowy interfejsu użytkownika.
+Hooks: Do zarządzania stanem komponentów i cyklem życia w React.
+HTML: Do strukturyzacji strony.
+CSS oraz SASS: Do stylizacji strony.
+AOS: Biblioteka do animacji, takich jak fade-in.
+Scrollspy: Do dynamicznego śledzenia i zmiany wyglądu elementów w zależności od pozycji użytkownika na stronie.
+React Transition Group: Do implementacji efektów przejść w karuzeli zdjęć.
+EmailJS: Do obsługi wysyłania wiadomości e-mail.
+Architektura Aplikacji
+Aplikacja jest zbudowana w architekturze komponentowej, typowej dla projektów opartych na React. Każdy element interfejsu użytkownika jest odrębnym komponentem, co umożliwia łatwe zarządzanie, rozwijanie i utrzymanie kodu. Aplikacja korzysta z mechanizmu hooków do zarządzania stanem i cyklem życia komponentów.
+
+Konkretne Użyte Narzędzia
+a. Generatory komponentów (modeli, kontrolerów, API)
+
+Create React App: Narzędzie do generowania i zarządzania projektem React.
+React Hooks: Do tworzenia komponentów funkcyjnych oraz zarządzania stanem i efektami ubocznymi.
+b. Routery kierujące ruchem HTTP
+
+React Router: Do zarządzania nawigacją na stronie klienta.
+c. Szablony HTML
+
+JSX (JavaScript XML): Używany w React do tworzenia dynamicznych komponentów HTML.
+d. Konektory do baz danych
+
+Brak: Projekt nie wykorzystuje bezpośredniego połączenia z bazą danych. Dane mogą być przechowywane w stanie komponentów lub w zewnętrznych plikach JSON.
+e. Współpraca z REST API
+
+EmailJS: Do wysyłania wiadomości e-mail poprzez zewnętrzne API.
+Propozycje Aplikacji i Systemów
+a. Własne prace inżynierskie
+
+Projekt jednoosobowy mający na celu stworzenie portfolio online prezentującego prace i projekty.
+b. Projekty z przedmiotu Programowanie Aplikacji Internetowych
+
+Aplikacja stworzona w ramach kursu, mająca na celu praktyczne zastosowanie zdobytej wiedzy z zakresu budowy aplikacji internetowych.
+c. Projekty z innych przedmiotów w Uczelni
+
+Projekty realizowane w ramach innych kursów informatycznych, takich jak "Web Development" lub "User Interface Design".
+d. Inne związane z hobby lub pracą zawodową
+
+Strona portfolio, która może być wykorzystywana do prezentacji osiągnięć zawodowych, projektów hobbystycznych oraz jako narzędzie do szukania pracy.
+Problemy i Sposoby Ich Rozwiązania
+Problem: Zarządzanie stanem komponentów
+
+Rozwiązanie: Wykorzystanie React Hooks (useState, useEffect) do zarządzania stanem komponentów i efektami ubocznymi. Hooks umożliwiają łatwe i czytelne zarządzanie stanem bez potrzeby korzystania z klas.
+Problem: Dynamiczna zmiana wyglądu elementów w zależności od pozycji użytkownika na stronie
+
+Rozwiązanie: Implementacja Scrollspy do śledzenia pozycji użytkownika na stronie i dynamicznego zmieniania wyglądu elementów, takich jak nawigacja lub sekcje.
+Problem: Płynne przejścia między elementami karuzeli zdjęć
+
+Rozwiązanie: Wykorzystanie React Transition Group do implementacji efektów przejść, co umożliwia płynne przechodzenie między elementami karuzeli zdjęć.
+Problem: Wysyłanie wiadomości e-mail z formularza kontaktowego
+
+Rozwiązanie: Użycie EmailJS do obsługi wysyłania wiadomości e-mail bez potrzeby konfiguracji własnego serwera e-mail. EmailJS umożliwia łatwe i szybkie wysyłanie e-maili poprzez API.
+Problem: Animacje elementów na stronie
+
+Rozwiązanie: Implementacja biblioteki AOS (Animate On Scroll) do dodawania animacji, takich jak fade-in, które są uruchamiane w momencie, gdy użytkownik przewija stronę. AOS jest łatwe w konfiguracji i dodaje atrakcyjne efekty wizualne.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
